@@ -1,0 +1,1 @@
+Xamarin.PDFView.MainActivity;xamarin.pdfview.MainActivity

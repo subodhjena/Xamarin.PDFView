@@ -1,0 +1,9 @@
+﻿<Properties StartupItem="Xamarin.PDFView/Xamarin.PDFView.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus_5" />
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Xamarin.PDFView MonoForAntroid.PreferredDevice="Nexus 4" />
+</Properties>
