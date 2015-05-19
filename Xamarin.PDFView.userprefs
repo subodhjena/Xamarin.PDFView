@@ -1,6 +1,10 @@
 ﻿<Properties StartupItem="Xamarin.PDFView/Xamarin.PDFView.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus_5" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.ZX1D62R7M8" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Xamarin.PDFView/MainActivity.cs">
+    <Files>
+      <File FileName="Xamarin.PDFView/MainActivity.cs" Line="35" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

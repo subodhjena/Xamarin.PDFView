@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 using Android.App;
 using Android.Content;
@@ -19,19 +20,54 @@ namespace Xamarin.PDFView
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
+		
+			string[] PDFViewerFileArray = { "compatibility.js", "customview.js", "data.json", "index.html", "minimal.css", "pdf.js", "pdf.worker.js", "pdffile.js", "samplePDF.pdf"};
+			var documentsPath = System.Environment.GetFolderPath (System.Environment.SpecialFolder.MyDocuments);
+			var pdfViewerPath = documentsPath + "/PDFViewer";
+
+			// Create the SubFolder id it doesn't exist
+			if (!System.IO.Directory.Exists (pdfViewerPath))
+				System.IO.Directory.CreateDirectory (pdfViewerPath);
+			else
+				Console.WriteLine ("The Directory Exists !! @ Path : "+ pdfViewerPath);
+
+
+			// Enumerate through the assets and copy them to the Folder
+			foreach (string fileName in PDFViewerFileArray) {
+
+				var assetsFilePath = @"pdfviewer/" + fileName;
+				var newFilePath = pdfViewerPath + @"/" + fileName;
+
+				//Read the data from assets folder
+				var data = ApplicationContext.Assets.Open (assetsFilePath);
+				StreamReader stream = new StreamReader (data);
+				var textualData = stream.ReadToEnd ();
+
+				// Now that we have the data lets write it to the folder
+				if (!System.IO.File.Exists (newFilePath)) {
+					Console.WriteLine (newFilePath + " Doesn't exist, we have to create it");
+					using (System.IO.StreamWriter file = new System.IO.StreamWriter(newFilePath)) {
+						file.WriteLine (textualData);
+					}
+				} else {
+					Console.WriteLine (newFilePath + " File Exists !, ReCreating it");
+					File.Delete (newFilePath);
+					using (System.IO.StreamWriter file = new System.IO.StreamWriter(newFilePath)) {
+						file.WriteLine (textualData);
+					}
+				}
+			}
 
 			webView = FindViewById<WebView> (Resource.Id.webView1);
-
 			WebSettings settings = webView.Settings;
 			settings.JavaScriptEnabled = true;
 			settings.AllowFileAccessFromFileURLs = true;
 			settings.AllowUniversalAccessFromFileURLs = true;
 			settings.BuiltInZoomControls = true;
 			webView.SetWebChromeClient (new WebChromeClient ());
-			webView.LoadUrl("file:///android_asset/pdfviewer/index.html");
+			webView.LoadUrl("file:///" + pdfViewerPath + "/index.html");
 		}
 
 		protected override void OnResume ()

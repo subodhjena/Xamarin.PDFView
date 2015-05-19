@@ -75,6 +75,6 @@
     <AndroidAsset Include="Assets\pdfviewer\pdf.js" />
     <AndroidAsset Include="Assets\pdfviewer\pdf.worker.js" />
     <AndroidAsset Include="Assets\pdfviewer\pdffile.js" />
-    <AndroidAsset Include="Assets\samplePDF.pdf" />
+    <AndroidAsset Include="Assets\pdfviewer\samplePDF.pdf" />
   </ItemGroup>
 </Project>
