@@ -42,6 +42,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
+    <Reference Include="AndHUD">
+      <HintPath>..\Components\AndHUD-1.3.1\lib\android\AndHUD.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -75,6 +78,11 @@
     <AndroidAsset Include="Assets\pdfviewer\pdf.js" />
     <AndroidAsset Include="Assets\pdfviewer\pdf.worker.js" />
     <AndroidAsset Include="Assets\pdfviewer\pdffile.js" />
-    <AndroidAsset Include="Assets\pdfviewer\samplePDF.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="AndHUD">
+      <Version>1.3.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
 </Project>
