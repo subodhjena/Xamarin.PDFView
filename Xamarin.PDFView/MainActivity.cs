@@ -91,7 +91,7 @@ namespace Xamarin.PDFView
 				var bytes = File.ReadAllBytes(_pdfFilePath);
 			}
 
-			_webView.LoadUrl("file:///android_asset/PDFViewer/index.html?file=" + _pdfFilePath);
+			_webView.LoadUrl("file:///android_asset/pdfviewer/index.html?file=" + _pdfFilePath);
 
 			AndHUD.Shared.Dismiss();
 		}
